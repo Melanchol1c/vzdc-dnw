@@ -1,15 +1,13 @@
 import React from 'react';
 import { Button, FormLayout, Input, PanelHeader, PanelHeaderBack, SelectMimicry, Textarea } from '@vkontakte/vkui';
+import { useHistory } from 'react-router-dom';
+import { Icon24Gallery } from '@vkontakte/icons';
 import ImageLoader from '../ImageLoader';
 
-import {CreateDonationStages} from '../../../../constants';
-import { useHistory } from 'react-router-dom';
-
 /**
- * @param props
+ *
  */
-export default function CreateDonationMainStage(props) {
-  const {handleChangeStage} = props;
+export default function CreateRegularDonation() {
   const history = useHistory();
 
   return (
@@ -18,7 +16,7 @@ export default function CreateDonationMainStage(props) {
         left={<PanelHeaderBack onClick={() => history.goBack()} />}
         separator={false}
       >
-        Целевой сбор
+      Регулярный сбор
       </PanelHeader>
       <FormLayout>
         <ImageLoader />
@@ -43,12 +41,10 @@ export default function CreateDonationMainStage(props) {
           top="Описание"
         />
         <SelectMimicry top="Выберите страну">Счёт VK Pay · 1234</SelectMimicry>
+        <SelectMimicry top="Автор">Матвей Правосудов</SelectMimicry>
 
-        <Button
-          onClick={() => handleChangeStage(CreateDonationStages.ADDITIONAL_STAGE)}
-          size="xl"
-        >
-          Далее
+        <Button size="xl">
+          Создать сбор
         </Button>
       </FormLayout>
     </>

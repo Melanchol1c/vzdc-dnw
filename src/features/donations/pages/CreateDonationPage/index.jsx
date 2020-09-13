@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import {CreateDonationStages} from '../../../../constants';
-import CreateDonationAdditionalStage from '../../components/CreateDonationAdditionalStage';
-import CreateDonationMainStage from '../../components/CreateDonationMainStage';
+import {CreateDonationStages, DonationTypes} from '../../../../constants';
+import {CreateDonationAdditionalStage, CreateDonationMainStage, CreateRegularDonation} from '../../components';
 
 /**
  * Create donation page component.
@@ -10,6 +10,7 @@ import CreateDonationMainStage from '../../components/CreateDonationMainStage';
  * @returns {React.FC}
  */
 export default function CreateDonationPage() {
+  const {type} = useParams();
   const [stage, setStage] = useState(CreateDonationStages.MAIN_STAGE);
 
   /**
@@ -17,7 +18,7 @@ export default function CreateDonationPage() {
    * 
    * @returns {React.FC}
    */
-  function renderStage() {
+  function renderTargetStage() {
     if (stage === CreateDonationStages.MAIN_STAGE) {
       return <CreateDonationMainStage handleChangeStage={setStage} />;
     } else if (stage === CreateDonationStages.ADDITIONAL_STAGE) {
@@ -27,5 +28,12 @@ export default function CreateDonationPage() {
     }
   }
 
-  return renderStage();
+ 
+  if (type === DonationTypes.TARGET) {
+    return renderTargetStage();
+  }
+
+  if (type === DonationTypes.REGULAR) {
+    return <CreateRegularDonation />;
+  }
 }
