@@ -23,6 +23,6 @@ export default [
     name: 'donationDetails',
     path: '/donations/:slug',
     exact: true,
-    component: lazy(() => import('./pages/DonationDetails')),
+    component: lazy(() => import('./pages/DonationDetailsPage')),
   },
 ];
