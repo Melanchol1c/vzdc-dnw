@@ -1,3 +1,10 @@
 {
-  "extends": "eslint-config-react-kirizey"
+  "extends": "eslint-config-react-kirizey",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js",".jsx"]
+       }
+    }
+  }
 }

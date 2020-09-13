@@ -5,6 +5,7 @@ import App from './App';
 import store from './store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import './plugins/vk-ui';
 import './plugins/vk-connect';
 
 ReactDOM.render(
