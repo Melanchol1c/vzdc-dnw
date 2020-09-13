@@ -27,9 +27,5 @@ export default function CreateDonationPage() {
     }
   }
 
-  return (
-    <>
-      {renderStage()}
-    </>
-  );
+  return renderStage();
 }

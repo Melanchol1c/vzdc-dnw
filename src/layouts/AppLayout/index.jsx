@@ -1,6 +1,5 @@
 import React from 'react';
 import { Panel, View } from '@vkontakte/vkui';
-import { useLocation, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 /**
@@ -10,12 +9,11 @@ import PropTypes from 'prop-types';
  * @returns {React.FC}
  */
 export default function AppLayout(props) {
-  const location = useLocation();
   const { children } = props;
 
   return (
     <View>
-      <Panel id={location.key}>
+      <Panel>
         {children}
       </Panel>
     </View>

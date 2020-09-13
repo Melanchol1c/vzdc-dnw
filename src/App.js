@@ -11,13 +11,13 @@ import AppRouter from './router';
  */
 function App() {
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Suspense fallback={'Loading...'}>
         <AppLayout>
           <AppRouter />
         </AppLayout>
-      </BrowserRouter>
-    </Suspense>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

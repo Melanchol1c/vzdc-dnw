@@ -1,15 +1,10 @@
 .create_button {
-    background: #4986CC;
-    margin-top: 24px;
-    text-align: 'center';
+  background: #4986CC;
+  margin-top: 24px;
+  text-align: 'center';
 }
 
 .text_contrainer {
-    text-align: center;
-    color: #818C99
-}
-
-.container {
-    display: flex;
-    justify-content: center;
+  text-align: center;
+  color: #818C99
 }

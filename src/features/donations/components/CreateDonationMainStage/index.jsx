@@ -1,20 +1,23 @@
 import React from 'react';
-import { Button, File, FormLayout, Input, PanelHeader, SelectMimicry, Textarea } from '@vkontakte/vkui';
+import { Button, File, FormLayout, Input, PanelHeader, PanelHeaderBack, SelectMimicry, Textarea } from '@vkontakte/vkui';
 import { Icon24Gallery } from '@vkontakte/icons';
 
 import styles from './index.module.css';
 
 import {CreateDonationStages} from '../../../../constants';
+import { useHistory } from 'react-router-dom';
 
 /**
  * @param props
  */
 export default function CreateDonationMainStage(props) {
   const {handleChangeStage} = props;
+  const history = useHistory();
 
   return (
     <>
       <PanelHeader
+        left={<PanelHeaderBack onClick={() => history.goBack()} />}
         separator={false}
       >
         Основное
@@ -54,7 +57,7 @@ export default function CreateDonationMainStage(props) {
           onClick={() => handleChangeStage(CreateDonationStages.ADDITIONAL_STAGE)}
           size="xl"
         >
-        Далее
+          Далее
         </Button>
       </FormLayout>
     </>

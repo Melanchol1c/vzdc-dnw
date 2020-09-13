@@ -1,45 +1,56 @@
 import React from 'react';
-import { Div, SimpleCell } from '@vkontakte/vkui';
-import Icon24ChevronRight from '@vkontakte/icons/dist/24/chevron_right';
-import Icon28TargetOutline from '@vkontakte/icons/dist/28/target_outline';
-import Icon36CalendarOutline from '@vkontakte/icons/dist/36/calendar_outline';
+import {useHistory} from 'react-router-dom';
+import { Div, PanelHeader, PanelHeaderBack, SimpleCell } from '@vkontakte/vkui';
+
 import style from './index.module.css';
+import globalStyles from '../../../../styles/index.module.css';
+import { Icon24ChevronRight, Icon28TargetOutline, Icon36CalendarOutline } from '@vkontakte/icons';
 
 /**
  * @returns
  */
-export default function index() {
+export default function ChooseDonationTypePage() {
+  const history = useHistory();
+
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <Div>
-        <SimpleCell 
-          after={<Icon24ChevronRight fill='#B8C1CC' />}
-          before={
-            <Icon28TargetOutline 
-              height={27} 
-              width={27} 
-            />
-          }
-          className={style.cell}
-          description='Когда есть определенная цель' 
-          style={{ marginBottom: 12 }}
-        >
-          Целевой сбор
-        </SimpleCell>
-        <SimpleCell 
-          after={<Icon24ChevronRight fill='#B8C1CC' />}
-          before={
-            <Icon36CalendarOutline 
-              height={27} 
-              width={27} 
-            />
-          }
-          className={style.cell}
-          description='Если помощь нужна ежемесячно' 
-        >
-          Регульярный сбор
-        </SimpleCell>
+    <>
+      <PanelHeader
+        left={<PanelHeaderBack onClick={() => history.goBack()} />}
+        separator={false}
+      >Тип сбора</PanelHeader>
+      <Div className={`${globalStyles.centeredContainer} ${globalStyles.fullHeightContainer}`}>
+        <Div>
+          <SimpleCell 
+            after={<Icon24ChevronRight fill='#B8C1CC' />}
+            before={
+              <Icon28TargetOutline
+                height={27} 
+                width={27} 
+              />
+            }
+            className={style.cell}
+            description='Когда есть определенная цель'
+            onClick={() => history.push('/create-donation/target')} 
+            style={{ marginBottom: 12 }}
+          >
+            Целевой сбор
+          </SimpleCell>
+          <SimpleCell 
+            after={<Icon24ChevronRight fill='#B8C1CC' />}
+            before={
+              <Icon36CalendarOutline 
+                height={27} 
+                width={27} 
+              />
+            }
+            className={style.cell}
+            description='Если помощь нужна ежемесячно'
+            onClick={() => history.push('/create-donation/regular')} 
+          >
+            Регулярный сбор
+          </SimpleCell>
+        </Div>
       </Div>
-    </div>
+    </>
   );
 }

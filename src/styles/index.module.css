@@ -1,0 +1,9 @@
+.fullHeightContainer {
+  height: calc(100vh - 52px);
+}
+
+.centeredContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
