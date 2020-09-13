@@ -11,15 +11,7 @@ import PropTypes from 'prop-types';
  */
 export default function AppLayout(props) {
   const location = useLocation();
-  const history = useHistory();
   const { children } = props;
-
-  /**
-   * Back to previous route.
-   */
-  function goBack() {
-    history.pop();
-  }
 
   return (
     <View>
