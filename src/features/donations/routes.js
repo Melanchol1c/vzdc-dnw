@@ -9,7 +9,7 @@ export default [
   },
   {
     name: 'createDonation',
-    path: '/create-donation',
+    path: '/create-donation/:type',
     exact: true,
     component: lazy(() => import('./pages/CreateDonationPage')),
   },

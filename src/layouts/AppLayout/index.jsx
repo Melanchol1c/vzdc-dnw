@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel, PanelHeader } from '@vkontakte/vkui';
+import { Panel, View } from '@vkontakte/vkui';
 import { useLocation, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -22,10 +22,11 @@ export default function AppLayout(props) {
   }
 
   return (
-    <Panel id={location.key}>
-      <PanelHeader>{document.title}</PanelHeader>
-      {children}
-    </Panel>
+    <View>
+      <Panel id={location.key}>
+        {children}
+      </Panel>
+    </View>
   );
 }
 
