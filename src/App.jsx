@@ -12,7 +12,7 @@ import AppRouter from './router';
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={'Loading...'}>
+      <Suspense fallback="Loading...">
         <AppLayout>
           <AppRouter />
         </AppLayout>

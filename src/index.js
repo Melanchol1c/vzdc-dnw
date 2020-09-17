@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Provider } from 'react-redux';
 import App from './App';
 import store from './store';
-import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import './plugins/vk-ui';
 import './plugins/vk-connect';
 
 ReactDOM.render(
+  // eslint-disable-next-line react/jsx-filename-extension
   <React.StrictMode>
     <Provider store={store}>
       <App />

@@ -9,6 +9,10 @@ import {
 } from './counterSlice';
 import styles from './Counter.module.css';
 
+/**
+ *
+ */
+// eslint-disable-next-line import/prefer-default-export
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
@@ -18,16 +22,16 @@ export function Counter() {
     <div>
       <div className={styles.row}>
         <button
-          className={styles.button}
           aria-label="Increment value"
+          className={styles.button}
           onClick={() => dispatch(increment())}
         >
           +
         </button>
         <span className={styles.value}>{count}</span>
         <button
-          className={styles.button}
           aria-label="Decrement value"
+          className={styles.button}
           onClick={() => dispatch(decrement())}
         >
           -
@@ -35,16 +39,14 @@ export function Counter() {
       </div>
       <div className={styles.row}>
         <input
-          className={styles.textbox}
           aria-label="Set increment amount"
+          className={styles.textbox}
+          onChange={(e) => setIncrementAmount(e.target.value)}
           value={incrementAmount}
-          onChange={e => setIncrementAmount(e.target.value)}
         />
         <button
           className={styles.button}
-          onClick={() =>
-            dispatch(incrementByAmount(Number(incrementAmount) || 0))
-          }
+          onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0))}
         >
           Add Amount
         </button>

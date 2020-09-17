@@ -1,6 +1,8 @@
 import React from 'react';
-import { Div, Button, Text, PanelHeader } from '@vkontakte/vkui';
-import {useHistory} from 'react-router-dom';
+import {
+  Div, Button, Text, PanelHeader,
+} from '@vkontakte/vkui';
+import { useHistory } from 'react-router-dom';
 
 import style from './index.module.css';
 import globalStyles from '../../../../styles/index.module.css';
@@ -10,7 +12,7 @@ import globalStyles from '../../../../styles/index.module.css';
  */
 export default function DonationsListPage() {
   const history = useHistory();
-  
+
   return (
     <>
       <PanelHeader separator={false}>Пожертвования</PanelHeader>
@@ -21,7 +23,7 @@ export default function DonationsListPage() {
           <Button
             className={style.create_button}
             onClick={() => history.push('/choose-donation-type')}
-            size='l'
+            size="l"
           >
             Создать сбор
           </Button>

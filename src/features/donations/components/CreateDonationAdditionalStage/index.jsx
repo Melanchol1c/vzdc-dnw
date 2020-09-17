@@ -1,18 +1,26 @@
 import React from 'react';
-import { Button, FormLayout, PanelHeader, PanelHeaderBack, Radio, SelectMimicry } from '@vkontakte/vkui';
+import {
+  Button, FormLayout, PanelHeader, PanelHeaderBack, Radio, SelectMimicry,
+} from '@vkontakte/vkui';
 
-import {CreateDonationStages} from '../../../../constants';
+import { CreateDonationStages } from '../../../../constants';
 
 /**
  * @param props
  */
 export default function CreateDonationAdditionalStage(props) {
-  const {handleChangeStage} = props;
+  const { handleChangeStage } = props;
 
   return (
     <>
       <PanelHeader
-        left={<PanelHeaderBack onClick={() => handleChangeStage(CreateDonationStages.MAIN_STAGE)} />}
+        left={(
+          <PanelHeaderBack
+            onClick={
+              () => handleChangeStage(CreateDonationStages.MAIN_STAGE)
+            }
+          />
+        )}
         separator={false}
       >
         Дополнительно
@@ -25,13 +33,13 @@ export default function CreateDonationAdditionalStage(props) {
           top="Сбор завершается"
           value="1"
         >
-        Когда соберём сумму
+          Когда соберём сумму
         </Radio>
         <Radio
           name="radio"
           value="2"
         >
-        В определённую дату
+          В определённую дату
         </Radio>
         <SelectMimicry top="Дата">20 сентября</SelectMimicry>
 

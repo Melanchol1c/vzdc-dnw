@@ -30,7 +30,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "eslint-config-react-kirizey": "^1.0.0",
+    "eslint-config-react-kirizey": "^1.1.0",
     "eslint-import-resolver-webpack": "^0.12.2"
   }
 }

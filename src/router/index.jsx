@@ -5,16 +5,16 @@ import donations from '../features/donations/routes';
 
 /**
  * Application main router.
- * 
+ *
  * @returns {React.FC}
  */
 export default function AppRouter() {
   const routes = [...donations];
   const renderRoutes = routes.map((route) => (
     <Route
+      key={route.name}
       component={route.component}
       exact={route.exact}
-      key={route.name}
       path={route.path}
     />
   ));
